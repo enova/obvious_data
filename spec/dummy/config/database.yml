@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  database: obvious_data_development
+  encoding: unicode
+  pool: 5
+  username: dummy
+  password:
+
+test:
+  adapter: postgresql
+  database: obvious_data_test
+  username: postgres
+
+production:
+  adapter: postgresql
+  database: dummy_production
+  pool: 5
+  username: dummy
+  password:

@@ -1,0 +1,47 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (25.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (120.1ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (247.0ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.8ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (238.5ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.7ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (257.3ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.7ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (247.3ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (113.9ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (243.7ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (114.8ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (245.8ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.2ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (245.5ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.4ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (253.4ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.9ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (243.1ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (121.2ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (252.7ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.1ms)[0m  DROP DATABASE IF EXISTS "obvious_data_test"
+  [1m[36m (260.5ms)[0m  [1mCREATE DATABASE "obvious_data_test" ENCODING = 'utf8'[0m

@@ -5,4 +5,11 @@ module ObviousData::SchemaMethods
       execute(File.read(path))
     end
   end
+
+  def execute_view_files(*views)
+    views.each do |view|
+      path = Rails.root.join('db', 'views', "#{view}.sql")
+      execute(File.read(path))
+    end
+  end
 end

@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["TODO: Your name"]
   s.email       = ["TODO: Your email"]
   s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ObviousData."
-  s.description = "TODO: Description of ObviousData."
+  s.summary     = "Treat DB functions, triggers, etc more like code, and make them more discoverable" 
+  s.description = "Treat DB functions, triggers, etc more like code, and make them more discoverable"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

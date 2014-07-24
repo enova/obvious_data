@@ -3,6 +3,8 @@ require 'rake'
 
 describe ObviousData::SchemaMethods do
   after{ reset_db! }
+  before(:context){ add_sql_sources }
+  after(:context){ remove_sql_sources }
 
   let(:migration){ ActiveRecord::Migration.new }
 
@@ -79,5 +81,25 @@ describe ObviousData::SchemaMethods do
     ActiveRecord::Base.connection.execute "drop function if exists one()"
     ActiveRecord::Base.connection.execute "drop view if exists one_v"
     ActiveRecord::Base.connection.execute "drop trigger if exists one_t on dummy"
+  end
+
+  def add_sql_sources
+    %w[functions triggers views].each do |dir|
+      FileUtils.copy_entry(File.join(sql_sources_root, dir), File.join(sql_sources_target, dir))
+    end
+  end
+
+  def remove_sql_sources
+    %w[functions triggers views].each do |dir|
+      FileUtils.rm_rf(File.join(sql_sources_target, dir))
+    end
+  end
+
+  def sql_sources_root
+    "#{File.dirname(__FILE__)}/support/db/"
+  end
+
+  def sql_sources_target
+    "#{File.dirname(__FILE__)}/dummy/db/"
   end
 end

@@ -12,4 +12,11 @@ module ObviousData::SchemaMethods
       execute(File.read(path))
     end
   end
+
+  def execute_trigger_files(*triggers)
+    triggers.each do |trigger|
+      path = Rails.root.join('db', 'triggers', "#{trigger}.sql")
+      execute(File.read(path))
+    end
+  end
 end

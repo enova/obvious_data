@@ -7,14 +7,14 @@ require "obvious_data/version"
 Gem::Specification.new do |s|
   s.name        = "obvious_data"
   s.version     = ObviousData::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
+  s.authors     = ["Suan-Aik Yeo"]
+  s.email       = ["yeosuanaik@gmail.com"]
+  s.homepage    = "http://github.com/enova/obvious_data"
   s.summary     = "Treat DB functions, triggers, etc more like code, and make them more discoverable" 
   s.description = "Treat DB functions, triggers, etc more like code, and make them more discoverable"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails"
 

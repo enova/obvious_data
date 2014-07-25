@@ -72,7 +72,26 @@ class CreateDummyTable < ActiveRecord::Migration
 end
 ```
 
-### Adding/changing views and triggers
+### Dropping functions
+What do you do when you no longer want to use a class from your source code? You delete it! Which is the same thing we'll do here. In the migration, make sure to use the full function signature instead of just the function name.
+
+*db/functions/one.sql: *deleted**
+
+*db/migrate/20140724185751_drop_one_function.rb:*
+
+```ruby
+class CreateDummyTable < ActiveRecord::Migration
+  def up
+    drop_function 'one()'
+  end
+
+  def down
+    # Unfortunately there's currently no easy way to revert this situation
+  end
+end
+```
+
+### Adding/changing/dropping views and triggers
 Practically the same as adding and changing functions. The available migration helpers are:
 
 - `execute_view_file(view_name)`

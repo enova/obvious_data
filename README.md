@@ -103,7 +103,8 @@ Supported Databases etc
 =======================
 
 - Currently the only database supported is PostgreSQL, but no reason that other DBs can't also be supported
-- This has been tested with Rails 3.2.x and Ruby 2.1.x and 1.9.3
+- Rails version 3.2.x through 4.2.x
+- Ruby versions 1.9.3, 2.1.x, and rubinius 2.2+
 
 Contributing
 ============

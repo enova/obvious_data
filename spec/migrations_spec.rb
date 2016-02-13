@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rake'
 
-describe ObviousData::SchemaMethods do
+RSpec.describe ObviousData::SchemaMethods do
   after{ reset_db! }
   before(:context){ add_sql_sources }
   after(:context){ remove_sql_sources }

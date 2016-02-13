@@ -8,6 +8,7 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 require 'pry'
+require 'simplecov'
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 

@@ -3,6 +3,7 @@ Obvious Data
 
 [![Gem Version](https://badge.fury.io/rb/obvious_data.svg)](https://rubygems.org/gems/obvious_data)
 [![Build Status](https://travis-ci.org/enova/obvious_data.svg?branch=master)](https://travis-ci.org/enova/obvious_data)
+[![Coverage Status](https://coveralls.io/repos/github/enova/obvious_data/badge.svg?branch=master)](https://coveralls.io/github/enova/obvious_data?branch=master)
 [![Dependency Status](https://gemnasium.com/enova/obvious_data.svg)](https://gemnasium.com/enova/obvious_data)
 
 Rails gem to treat DB functions, triggers, etc more like code, and make them more discoverable

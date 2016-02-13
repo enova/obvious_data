@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 3.0.0", "< 5.0.0"
 
-  s.add_development_dependency "pg", "~> 0"
-  s.add_development_dependency "rspec", ">= 3.0.0", "< 4.0.0"
-  s.add_development_dependency "pry", "~> 0"
+  s.add_development_dependency "pg", "~> 0.18"
+  s.add_development_dependency "rspec", "~> 3.4"
+  s.add_development_dependency "pry", "~> 0.10"
 end

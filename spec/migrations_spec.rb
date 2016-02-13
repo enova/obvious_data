@@ -10,7 +10,7 @@ describe ObviousData::SchemaMethods do
 
   describe '#execute_function_file' do
     it 'executes specified function from the db/functions/ dir' do
-      expect{ select_function(:one) }.to raise_error
+      expect{ select_function(:one) }.to raise_error(/PG::UndefinedFunction/)
 
       migration.execute_function_file('one')
       expect( select_function(:one) ).to eq( {'one' => '1'} )
@@ -23,13 +23,13 @@ describe ObviousData::SchemaMethods do
       expect( select_function(:one) ).to eq( {'one' => '1'} )
 
       migration.drop_function('one()')
-      expect{ select_function(:one) }.to raise_error
+      expect{ select_function(:one) }.to raise_error(/PG::UndefinedFunction/)
     end
   end
 
   describe '#execute_view_file' do
     it 'executes specified view from the db/views/ dir' do
-      expect{ select_view(:one_v) }.to raise_error
+      expect{ select_view(:one_v) }.to raise_error(/PG::UndefinedTable/)
 
       migration.execute_view_file('one_v')
       expect( select_view(:one_v) ).to eq( '1' )
@@ -42,7 +42,7 @@ describe ObviousData::SchemaMethods do
       expect( select_view(:one_v) ).to eq( '1' )
 
       migration.drop_view('one_v')
-      expect{ select_view(:one_v) }.to raise_error
+      expect{ select_view(:one_v) }.to raise_error(/PG::UndefinedTable/)
     end
   end
 

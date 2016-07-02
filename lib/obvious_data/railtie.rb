@@ -4,13 +4,8 @@ module ObviousData
   class Railtie < ::Rails::Railtie
     initializer 'obvious_data' do
       ActiveSupport.on_load :active_record do
-        ActiveRecord::ConnectionAdapters::AbstractAdapter.class_eval do
-          include ObviousData::SchemaMethods
-        end
-
-        ActiveRecord::Migration::CommandRecorder.class_eval do
-          include ObviousData::CommandRecorderMethods
-        end
+        ActiveRecord::ConnectionAdapters::AbstractAdapter.include ObviousData::SchemaMethods
+        ActiveRecord::Migration::CommandRecorder.include ObviousData::CommandRecorderMethods
       end
     end
   end

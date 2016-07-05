@@ -13,14 +13,14 @@ RSpec.describe ObviousData::SchemaMethods do
       expect { select_function(:one) }.to raise_error(/PG::UndefinedFunction/)
 
       migration.execute_function_file('one')
-      expect(select_function(:one)).to eq('one' => '1')
+      expect(select_function(:one)['one'].to_i).to eq(1)
     end
   end
 
   describe '#drop_function' do
     it 'drops the specified function' do
       migration.execute_function_file('one')
-      expect(select_function(:one)).to eq('one' => '1')
+      expect(select_function(:one)['one'].to_i).to eq(1)
 
       migration.drop_function('one()')
       expect { select_function(:one) }.to raise_error(/PG::UndefinedFunction/)
@@ -32,14 +32,14 @@ RSpec.describe ObviousData::SchemaMethods do
       expect { select_view(:one_v) }.to raise_error(/PG::UndefinedTable/)
 
       migration.execute_view_file('one_v')
-      expect(select_view(:one_v)).to eq '1'
+      expect(select_view(:one_v).to_i).to eq 1
     end
   end
 
   describe '#drop_view' do
     it 'drops the specified view' do
       migration.execute_view_file('one_v')
-      expect(select_view(:one_v)).to eq '1'
+      expect(select_view(:one_v).to_i).to eq 1
 
       migration.drop_view('one_v')
       expect { select_view(:one_v) }.to raise_error(/PG::UndefinedTable/)

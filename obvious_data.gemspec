@@ -11,14 +11,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Suan-Aik Yeo"]
   s.email       = ["yeosuanaik@gmail.com"]
   s.homepage    = "http://github.com/enova/obvious_data"
-  s.summary     = "Treat DB functions, triggers, etc more like code, and make them more discoverable" 
+  s.summary     = "Treat DB functions, triggers, etc more like code, and make them more discoverable"
   s.description = "Rails gem to treat DB functions, triggers, etc more like code, and make them more discoverable"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "railties", ">= 3.2.0", "< 5.1.0"
-  s.add_dependency "activerecord", ">= 3.2.0", "< 5.1.0"
+  s.add_dependency "railties", ">= 3.2.0", "< 6"
+  s.add_dependency "activerecord", ">= 3.2.0", "< 6"
 
   s.add_development_dependency "pg", "~> 0.18"
   s.add_development_dependency "rspec", "~> 3.4"

@@ -3,7 +3,6 @@
 --
 
 SET statement_timeout = 0;
-SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -43,7 +42,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: dummy; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: dummy; Type: TABLE; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE TABLE dummy (
@@ -71,7 +70,7 @@ ALTER SEQUENCE dummy_id_seq OWNED BY dummy.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE TABLE schema_migrations (
@@ -87,7 +86,7 @@ ALTER TABLE ONLY dummy ALTER COLUMN id SET DEFAULT nextval('dummy_id_seq'::regcl
 
 
 --
--- Name: dummy_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: dummy_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
 --
 
 ALTER TABLE ONLY dummy
@@ -95,7 +94,7 @@ ALTER TABLE ONLY dummy
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace:
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);

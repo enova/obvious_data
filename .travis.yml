@@ -3,9 +3,8 @@ cache: bundler
 sudo: false
 
 rvm:
-  - 2.3.0
+  - 2.3.3
   - 2.2.4
-  - 2.1.8
 
 gemfile:
   - gemfiles/rails_3.2.gemfile
@@ -13,11 +12,6 @@ gemfile:
   - gemfiles/rails_4.1.gemfile
   - gemfiles/rails_4.2.gemfile
   - gemfiles/rails_5.0.gemfile
-
-matrix:
-  exclude:
-    - rvm: 2.1.8
-      gemfile: gemfiles/rails_5.0.gemfile
 
 deploy:
   provider: rubygems

@@ -1,15 +1,30 @@
 language: ruby
 cache: bundler
-sudo: false
 
 rvm:
-  - 2.3.3
-  - 2.4.1
+  - 2.5.8
+  - 2.7.2
+env:
+  matrix:
+    - PG_VERSION=11
+
+before_install:
+  - git config --global user.name "Prodder In Travis-CI"
+  - git config --global user.email "prodder@example.com"
+  # install postgres
+  - sudo apt-get install postgresql-client-$PG_VERSION postgresql-server-dev-$PG_VERSION
+  # setup pg_dump
+  - ls -al /usr/lib/postgresql/
+  - sudo ln -sfn /usr/lib/postgresql/$PG_VERSION/bin/pg_dump /usr/bin/pg_dump
+  # start up the specific version of PG
+  - sudo -E sh -c 'service postgresql stop'
+  - sleep 5s
+  - sudo -E sh -c 'service postgresql start $PG_VERSION'
+  - psql -U postgres -d postgres -c 'select setting from pg_settings where name = $m$server_version$m$;'
 
 gemfile:
-  - gemfiles/rails_4.2.gemfile
-  - gemfiles/rails_5.0.gemfile
-  - gemfiles/rails_5.1.gemfile
+  - gemfiles/rails_5.2.gemfile
+  - gemfiles/rails_6.1.gemfile
 
 deploy:
   provider: rubygems

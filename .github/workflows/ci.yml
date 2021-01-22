@@ -9,21 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
-        ruby-version: [2.4.1, 2.7.2]
-        include:
-          - ruby-version: head
-            experimental: true
-
+        ruby-version: [2.4.1]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-      - name: Install dependencies
+      - name: Setup Postgres
+        uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '11'
+      - name: Install Gems
         run: bundle install
       - name: Run tests
         run: bundle exec rspec

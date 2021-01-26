@@ -1,15 +1,16 @@
 language: ruby
 cache: bundler
-sudo: false
 
 rvm:
-  - 2.3.3
-  - 2.4.1
+  - 2.5.8
+  - 2.7.2
+
+services:
+  - postgresql
 
 gemfile:
-  - gemfiles/rails_4.2.gemfile
-  - gemfiles/rails_5.0.gemfile
-  - gemfiles/rails_5.1.gemfile
+  - gemfiles/rails_5.2.gemfile
+  - gemfiles/rails_6.1.gemfile
 
 deploy:
   provider: rubygems

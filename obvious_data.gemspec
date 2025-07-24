@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Treat DB functions, triggers, etc more like code, and make them more discoverable'
   s.description = 'Rails gem to treat DB functions, triggers, etc more like code, and make them more discoverable'
 
-  s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.md']
+  s.files = Dir['{app,config,db,lib}/**/*'] + ['LICENSE.txt', 'Rakefile', 'README.md']
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'railties', '>= 3.2.0', '< 7'

@@ -17,11 +17,10 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*'] + ['LICENSE.txt', 'Rakefile', 'README.md']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'railties', '>= 3.2.0', '< 7'
-  s.add_dependency 'activerecord', '>= 3.2.0', '< 7'
+  s.add_dependency 'railties', '>= 3.2.0', '< 8'
+  s.add_dependency 'activerecord', '>= 3.2.0', '< 8'
 
   s.add_development_dependency 'pg', '< 2'
   s.add_development_dependency 'rspec', '~> 3.4'
   s.add_development_dependency 'pry', '~> 0.10'
-  s.add_development_dependency 'coveralls', '~> 0.8'
 end

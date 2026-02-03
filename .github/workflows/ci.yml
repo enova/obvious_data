@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version: [2.5.8, 2.7.2]
+        postgres-version: [15, 16, 17]
+    services:
+      postgres:
+        image: postgres:${{ matrix.postgres-version }}-alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: Install PostgreSQL ${{ matrix.postgres-version }} Client
+        run: |
+          # Add PostgreSQL APT repository
+          sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+          sudo apt-get update
+          # Install PostgreSQL client tools
+          sudo apt-get install -y postgresql-client-${{ matrix.postgres-version }}
+      - name: Setup Database
+        run: |
+          mkdir -p config
+          cat <<EOF > config/database.yml
+          test:
+            adapter: postgresql
+            encoding: unicode
+            pool: 20
+            database: prodder_test
+          EOF
+      - name: Test with RSpec
+        env:
+          PGHOST: localhost
+          PGPORT: 5432
+          PGUSER: postgres
+          PGPASSWORD: postgres
+        run: |
+          export PATH="/usr/lib/postgresql/${{ matrix.postgres-version }}/bin:$PATH"
+          bundle exec rspec
